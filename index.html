@@ -47,8 +47,29 @@ img{max-width:100%;display:block;}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
 
 .announce{
-  background:var(--ink);color:#fff;text-align:center;font-size:13px;font-weight:600;
-  padding:8px 20px;letter-spacing:0.01em;
+  background:linear-gradient(90deg,var(--ink),#3a2e1e,var(--ink));
+  color:#fff;text-align:center;font-size:13px;font-weight:600;
+  padding:9px 20px;letter-spacing:0.01em;overflow:hidden;
+}
+.announce-inner{
+  display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:center;
+  max-width:100%;
+}
+.announce-emoji{
+  display:inline-block;font-size:15px;animation:announce-bounce 1.8s ease-in-out infinite;
+}
+.announce-badge{
+  background:var(--sunshine);color:var(--ink);font-family:'Baloo 2',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 9px;border-radius:20px;
+  border:1.5px solid rgba(43,33,23,0.5);flex-shrink:0;
+}
+.announce-text{color:#fdf6e7;}
+@keyframes announce-bounce{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-2px) rotate(-8deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .announce-emoji{animation:none;}
 }
 header{
   border-bottom:3px solid var(--ink);
@@ -313,7 +334,13 @@ footer{
 </head>
 <body>
 
-<div class="announce">🎨 New this week: Dinosaur School &amp; Four Friends and the Cheerful Halloween — instant PDF, print at home</div>
+<div class="announce">
+  <span class="announce-inner">
+    <span class="announce-emoji" aria-hidden="true">🎨</span>
+    <span class="announce-badge">NEW</span>
+    <span class="announce-text">Dinosaur School, Four Friends &amp; Cute Animals Around the World are here — instant PDF, print at home</span>
+  </span>
+</div>
 
 <header>
   <div class="header-inner">
@@ -401,7 +428,7 @@ footer{
         </svg>
       </div>
       <h3>Coloring Books</h3>
-      <span>6 items</span>
+      <span>7 items</span>
     </a>
 
     <a class="cat-pill" href="shop-templates.html">
