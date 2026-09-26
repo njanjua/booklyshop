@@ -1118,7 +1118,7 @@ footer{
               
             </div>
 
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2660595/forms/199644019259606374/subscribe" data-code="" method="post" target="_self"
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2660595/forms/199644019259606374/subscribe" data-code="" method="post" tartarget="ml_hidden_frame"get="_self"
               <div class="ml-form-formContent">
                 
 
@@ -1195,6 +1195,23 @@ footer{
               
               <input type="hidden" name="anticsrf" value="true">
             </form>
+          <iframe name="ml_hidden_frame" style="display:none;"></iframe>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var frame = document.querySelector('iframe[name="ml_hidden_frame"]');
+  var form = document.querySelector('.ml-block-form');
+  if (frame && form) {
+    frame.addEventListener('load', function() {
+      if (form.dataset.submitted) {
+        window.location.href = 'https://bookly-shop.com/free-pages-thanks.html';
+      }
+    });
+    form.addEventListener('submit', function() {
+      form.dataset.submitted = 'true';
+    });
+  }
+});
+</script>
           </div>
 
           <div class="ml-form-successBody row-success" style="display: none">
