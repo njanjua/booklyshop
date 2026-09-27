@@ -55,17 +55,29 @@
 
   var form = wrap.querySelector('.ml-block-form');
   var closeBtn = wrap.querySelector('.signup-widget-close');
+  var submitted = false;
 
   function hideWidget() {
     wrap.classList.remove('visible');
     setTimeout(function () { wrap.remove(); }, 400);
   }
 
+  function showThanks() {
+    wrap.innerHTML = '<div class="signup-widget-thanks"><h4>Thank you!</h4><p>Check your email for your free coloring pages.</p></div>';
+    setTimeout(hideWidget, 2500);
+  }
+
   closeBtn.addEventListener('click', hideWidget);
 
   form.addEventListener('submit', function () {
-    wrap.innerHTML = '<div class="signup-widget-thanks"><h4>Thank you!</h4><p>Check your email for your free coloring pages.</p></div>';
-    setTimeout(hideWidget, 2500);
+    submitted = true;
+    setTimeout(showThanks, 300);
+  });
+
+  frame.addEventListener('load', function () {
+    if (submitted) {
+      setTimeout(showThanks, 0);
+    }
   });
 
   setTimeout(function () {
